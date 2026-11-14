@@ -1,0 +1,418 @@
+[
+  {
+    "date": "2027-01-08",
+    "home": "Mist",
+    "away": "Phantom",
+    "time": "7:00 PM ET",
+    "venue": "TD Garden Boston , MA",
+    "url": "https://www.unrivaled.basketball/game/2q7fjfhslf2f"
+  },
+  {
+    "date": "2027-01-08",
+    "home": "Breeze",
+    "away": "Vinyl",
+    "time": "8:30 PM ET",
+    "venue": "TD Garden Boston , MA",
+    "url": "https://www.unrivaled.basketball/game/irw4a9zeedwy"
+  },
+  {
+    "date": "2027-01-08",
+    "home": "Lunar Owls",
+    "away": "Rose",
+    "time": "10:00 PM ET",
+    "venue": "Intuit Dome Inglewood , CA",
+    "url": "https://www.unrivaled.basketball/game/i1e9w5u3tsbm"
+  },
+  {
+    "date": "2027-01-08",
+    "home": "Laces",
+    "away": "Hive",
+    "time": "11:30 PM ET",
+    "venue": "Intuit Dome Inglewood , CA",
+    "url": "https://www.unrivaled.basketball/game/adp89x8e4pe4"
+  },
+  {
+    "date": "2027-01-11",
+    "home": "Breeze",
+    "away": "Mist",
+    "time": "7:00 PM ET",
+    "venue": "Little Caesars Arena Detroit , MI",
+    "url": "https://www.unrivaled.basketball/game/lygmupwgjuu3"
+  },
+  {
+    "date": "2027-01-11",
+    "home": "Phantom",
+    "away": "Vinyl",
+    "time": "8:30 PM ET",
+    "venue": "Little Caesars Arena Detroit , MI",
+    "url": "https://www.unrivaled.basketball/game/bw0emk53bv8d"
+  },
+  {
+    "date": "2027-01-11",
+    "home": "Rose",
+    "away": "Hive",
+    "time": "10:00 PM ET",
+    "venue": "Chase Center San Francisco , CA",
+    "url": "https://www.unrivaled.basketball/game/ae6twek402b8"
+  },
+  {
+    "date": "2027-01-11",
+    "home": "Lunar Owls",
+    "away": "Laces",
+    "time": "11:30 PM ET",
+    "venue": "Chase Center San Francisco , CA",
+    "url": "https://www.unrivaled.basketball/game/8jda1nncbkq4"
+  },
+  {
+    "date": "2027-01-19",
+    "home": "Mist",
+    "away": "Vinyl",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/a5uqt4x4gowc"
+  },
+  {
+    "date": "2027-01-19",
+    "home": "Hive",
+    "away": "Lunar Owls",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/zb1ch6ipyq17"
+  },
+  {
+    "date": "2027-01-20",
+    "home": "Laces",
+    "away": "Rose",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/474yjp27j3j4"
+  },
+  {
+    "date": "2027-01-20",
+    "home": "Phantom",
+    "away": "Breeze",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/lye8dk6yi9ks"
+  },
+  {
+    "date": "2027-01-22",
+    "home": "Breeze",
+    "away": "Lunar Owls",
+    "time": "7:30 PM ET",
+    "venue": "Barclays Center Brooklyn , NY",
+    "url": "https://www.unrivaled.basketball/game/u3lydm70ypoo"
+  },
+  {
+    "date": "2027-01-22",
+    "home": "Mist",
+    "away": "Hive",
+    "time": "9:00 PM ET",
+    "venue": "Barclays Center Brooklyn , NY",
+    "url": "https://www.unrivaled.basketball/game/alfamc31fdo5"
+  },
+  {
+    "date": "2027-01-23",
+    "home": "Vinyl",
+    "away": "Laces",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/ep88i472fwzv"
+  },
+  {
+    "date": "2027-01-23",
+    "home": "Phantom",
+    "away": "Rose",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/8ixji0wyz5vf"
+  },
+  {
+    "date": "2027-01-24",
+    "home": "Lunar Owls",
+    "away": "Mist",
+    "time": "2:00 PM ET",
+    "venue": "Target Center Minneapolis , MN",
+    "url": "https://www.unrivaled.basketball/game/s75kvacwpezk"
+  },
+  {
+    "date": "2027-01-24",
+    "home": "Hive",
+    "away": "Breeze",
+    "time": "3:30 PM ET",
+    "venue": "Target Center Minneapolis , MN",
+    "url": "https://www.unrivaled.basketball/game/v10cga51biz0"
+  },
+  {
+    "date": "2027-01-26",
+    "home": "Laces",
+    "away": "Phantom",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/73gsb65sb9vz"
+  },
+  {
+    "date": "2027-01-26",
+    "home": "Vinyl",
+    "away": "Rose",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/sjoptlzntpoc"
+  },
+  {
+    "date": "2027-01-29",
+    "home": "Vinyl",
+    "away": "Hive",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/tt4774rzk5ic"
+  },
+  {
+    "date": "2027-01-29",
+    "home": "Phantom",
+    "away": "Lunar Owls",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/x2q8gsybmrai"
+  },
+  {
+    "date": "2027-01-30",
+    "home": "Mist",
+    "away": "Laces",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/e8m4j9gtjmt3"
+  },
+  {
+    "date": "2027-01-30",
+    "home": "Rose",
+    "away": "Breeze",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/niyn6lapht7l"
+  },
+  {
+    "date": "2027-01-31",
+    "home": "Hive",
+    "away": "Phantom",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/4eg64yb1j3dh"
+  },
+  {
+    "date": "2027-01-31",
+    "home": "Lunar Owls",
+    "away": "Vinyl",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/kgds9dpg604s"
+  },
+  {
+    "date": "2027-02-01",
+    "home": "Breeze",
+    "away": "Laces",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/vydkxwxc1v4d"
+  },
+  {
+    "date": "2027-02-01",
+    "home": "Mist",
+    "away": "Rose",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/gbdxodpt0fg6"
+  },
+  {
+    "date": "2027-02-05",
+    "home": "Hive",
+    "away": "Laces",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/613nodoa9d3j"
+  },
+  {
+    "date": "2027-02-05",
+    "home": "Lunar Owls",
+    "away": "Breeze",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/mxtxl4gg79w1"
+  },
+  {
+    "date": "2027-02-06",
+    "home": "Vinyl",
+    "away": "Mist",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/d3thsa2gwier"
+  },
+  {
+    "date": "2027-02-06",
+    "home": "Rose",
+    "away": "Phantom",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/2csaoxen8w5w"
+  },
+  {
+    "date": "2027-02-07",
+    "home": "Breeze",
+    "away": "Hive",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/sbuqumm675kj"
+  },
+  {
+    "date": "2027-02-07",
+    "home": "Laces",
+    "away": "Lunar Owls",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/jq3qz8jdqvwe"
+  },
+  {
+    "date": "2027-02-08",
+    "home": "Phantom",
+    "away": "Mist",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/1eww6736sf9v"
+  },
+  {
+    "date": "2027-02-08",
+    "home": "Rose",
+    "away": "Vinyl",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/whjrsdfhjs9y"
+  },
+  {
+    "date": "2027-02-12",
+    "home": "Breeze",
+    "away": "Phantom",
+    "time": "7:30 PM ET",
+    "venue": "Toyota Center Houston , TX",
+    "url": "https://www.unrivaled.basketball/game/zqb7t9c64hm9"
+  },
+  {
+    "date": "2027-02-12",
+    "home": "Laces",
+    "away": "Vinyl",
+    "time": "9:00 PM ET",
+    "venue": "Toyota Center Houston , TX",
+    "url": "https://www.unrivaled.basketball/game/z94reyzbh3tw"
+  },
+  {
+    "date": "2027-02-13",
+    "home": "Hive",
+    "away": "Rose",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/5ov39oenvljh"
+  },
+  {
+    "date": "2027-02-13",
+    "home": "Mist",
+    "away": "Lunar Owls",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/sgbvvf58r88d"
+  },
+  {
+    "date": "2027-02-15",
+    "home": "Vinyl",
+    "away": "Phantom",
+    "time": "7:30 PM ET",
+    "venue": "Xfinity Mobile Arena Philadelphia , PA",
+    "url": "https://www.unrivaled.basketball/game/uu3dwgf3upf9"
+  },
+  {
+    "date": "2027-02-15",
+    "home": "Laces",
+    "away": "Breeze",
+    "time": "9:00 PM ET",
+    "venue": "Xfinity Mobile Arena Philadelphia , PA",
+    "url": "https://www.unrivaled.basketball/game/iswrp4iyvl4x"
+  },
+  {
+    "date": "2027-02-23",
+    "home": "Rose",
+    "away": "Lunar Owls",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/8uqjur1dq8sn"
+  },
+  {
+    "date": "2027-02-23",
+    "home": "Hive",
+    "away": "Mist",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/q2o2tew3dcj0"
+  },
+  {
+    "date": "2027-02-26",
+    "home": "Lunar Owls",
+    "away": "Phantom",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/yih7mbwk00pd"
+  },
+  {
+    "date": "2027-02-26",
+    "home": "Hive",
+    "away": "Vinyl",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/p8ydc4vbup2h"
+  },
+  {
+    "date": "2027-02-27",
+    "home": "Rose",
+    "away": "Laces",
+    "time": "5:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/gjc4lj3ac7au"
+  },
+  {
+    "date": "2027-02-27",
+    "home": "Mist",
+    "away": "Breeze",
+    "time": "6:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/7s9qei1inmx7"
+  },
+  {
+    "date": "2027-02-28",
+    "home": "Vinyl",
+    "away": "Lunar Owls",
+    "time": "8:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/rrivj51hxfvh"
+  },
+  {
+    "date": "2027-02-28",
+    "home": "Phantom",
+    "away": "Hive",
+    "time": "9:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/s4ptl6iby881"
+  },
+  {
+    "date": "2027-03-01",
+    "home": "Breeze",
+    "away": "Rose",
+    "time": "7:30 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/qy2sw4jzfwin"
+  },
+  {
+    "date": "2027-03-01",
+    "home": "Laces",
+    "away": "Mist",
+    "time": "9:00 PM ET",
+    "venue": "Miami, FL",
+    "url": "https://www.unrivaled.basketball/game/6l3vbyes6f4o"
+  }
+]
