@@ -1,0 +1,24 @@
+import { useState } from 'react'
+import { useServerFn } from '@tanstack/react-start'
+import { ArrowLeftRight, Plus } from 'lucide-react'
+import { Button } from './ui/button'
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog'
+import { useFantasy, useFantasyAction } from './fantasy-provider'
+import { offerTrade, respondTrade } from '@/lib/transactions.functions'
+import { clubPlaysToday } from '@/lib/transaction-rules'
+import { DEMO } from '@/lib/fantasy'
+
+export function TradesPanel(){
+ const f=useFantasy(); const offer=useServerFn(offerTrade);const respond=useServerFn(respondTrade)
+ const [open,setOpen]=useState(false);const [to,setTo]=useState('');const [give,setGive]=useState('');const [get,setGet]=useState('');const [parent,setParent]=useState<string|undefined>()
+ const send=useFantasyAction(async()=>{if(!f.myTeam)return;await offer({data:{from:f.myTeam.id,to,give,get,...(parent?{parent}:{})}});setOpen(false)})
+ const reply=useFantasyAction((data:{id:string;decision:'accept'|'deny'|'cancel'})=>respond({data}))
+ const name=(id:string)=>f.players.find(p=>p.id===id)?.name ?? 'Player'
+ const myPlayers=f.slots.filter(s=>s.team_id===f.myTeam?.id&&s.player_id)
+ const theirs=f.slots.filter(s=>s.team_id===to&&s.player_id)
+ const locked=(id:string|null)=>clubPlaysToday(f.players.find(p=>p.id===id)?.club_id??null,f.gameDays)
+ return <><div className="section-heading"><h2>Trade offers</h2><Button disabled={!f.myTeam||f.leagueId===DEMO||f.league?.draft_status!=='complete'} onClick={()=>{setParent(undefined);setTo('');setGive('');setGet('');send.reset();setOpen(true)}}><Plus size={15}/>Offer trade</Button></div>
+ {!f.trades.length?<div className="empty-state"><ArrowLeftRight size={24}/><h2>No trade offers</h2><p>{f.league?.draft_status!=='complete'?'Trades open after the draft.':'Your sent offers and incoming responses appear here.'}</p></div>:<div className="space-y-4">{f.trades.map(t=><article key={t.id} className="border-b border-border py-5"><div className="flex flex-wrap items-center justify-between gap-3"><strong className="text-sm">{f.teams.find(x=>x.id===t.from_team)?.name} → {f.teams.find(x=>x.id===t.to_team)?.name}</strong><span className="text-xs text-muted-foreground">{t.status}</span></div><p className="muted-copy">{name(t.offered_player)} ↔ {name(t.requested_player)}</p>{t.status==='pending'&&<div className="flex flex-wrap gap-2">{t.to_team===f.myTeam?.id?<><Button disabled={reply.isPending} onClick={()=>reply.mutate({id:t.id,decision:'accept'})}>Accept</Button><Button variant="outline" disabled={reply.isPending} onClick={()=>reply.mutate({id:t.id,decision:'deny'})}>Deny</Button><Button variant="outline" onClick={()=>{setParent(t.id);setTo(t.from_team);setGive(t.requested_player);setGet(t.offered_player);send.reset();setOpen(true)}}>Counteroffer</Button></>:<Button variant="outline" disabled={reply.isPending} onClick={()=>reply.mutate({id:t.id,decision:'cancel'})}>Cancel offer</Button>}</div>}</article>)}</div>}
+ {reply.error&&<p className="form-error" role="alert">{reply.error.message}</p>}
+ <Dialog open={open} onOpenChange={setOpen}><DialogContent className="fantasy-modal"><DialogTitle>{parent?'Counteroffer':'Propose a trade'}</DialogTitle><DialogDescription>One player for one player. Players whose club plays today (Eastern Time) cannot be traded.</DialogDescription><form onSubmit={e=>{e.preventDefault();send.mutate()}}><label className="field-label">Other team<select required value={to} disabled={!!parent} onChange={e=>{setTo(e.target.value);setGet('')}}><option value="">Choose a manager</option>{f.teams.filter(t=>t.id!==f.myTeam?.id&&t.owner_id).map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label><label className="field-label">You give<select required value={give} onChange={e=>setGive(e.target.value)}><option value="">Choose your player</option>{myPlayers.map(s=><option key={s.id} value={s.player_id??''} disabled={locked(s.player_id)}>{name(s.player_id??'')}{locked(s.player_id)?' · Plays today':''}</option>)}</select></label><label className="field-label">You receive<select required value={get} onChange={e=>setGet(e.target.value)}><option value="">Choose their player</option>{theirs.map(s=><option key={s.id} value={s.player_id??''} disabled={locked(s.player_id)}>{name(s.player_id??'')}{locked(s.player_id)?' · Plays today':''}</option>)}</select></label><Button type="submit" disabled={send.isPending}>{send.isPending?'Checking game-day eligibility…':'Send offer'}</Button>{send.error&&<p className="form-error" role="alert">{send.error.message}</p>}</form></DialogContent></Dialog></>
+}
