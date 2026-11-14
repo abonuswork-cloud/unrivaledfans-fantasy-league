@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { publicFantasy } from '@/lib/fantasy.functions';
-import { FantasyProvider } from '@/components/fantasy-provider';
+import { FantasyProvider, fantasyQuery } from '@/components/fantasy-provider';
 import { FantasyShell } from '@/components/fantasy-shell';
 
 function NotFoundComponent() {
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
-  loader: () => publicFantasy(),
+  loader: ({ context }) => context.queryClient.ensureQueryData(fantasyQuery()),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
