@@ -239,16 +239,19 @@ export type Database = {
       }
       league_roles: {
         Row: {
+          is_co_commissioner: boolean
           league_id: string
           role: string
           user_id: string
         }
         Insert: {
+          is_co_commissioner?: boolean
           league_id: string
           role: string
           user_id: string
         }
         Update: {
+          is_co_commissioner?: boolean
           league_id?: string
           role?: string
           user_id?: string
@@ -913,6 +916,10 @@ export type Database = {
       resolve_league_waivers: { Args: { lid: string }; Returns: undefined }
       respond_player_trade: {
         Args: { decision: string; trade_id: string }
+        Returns: undefined
+      }
+      set_league_co_commissioner: {
+        Args: { lid: string; member_id: string; promoted: boolean }
         Returns: undefined
       }
       start_mock_draft: { Args: { lid: string }; Returns: undefined }

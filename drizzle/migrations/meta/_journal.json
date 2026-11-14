@@ -99,6 +99,13 @@
       "when": 1794694148428,
       "tag": "0013_restrict_sync_and_schedule_checks",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1794694548907,
+      "tag": "0014_league_co_commissioner_access",
+      "breakpoints": true
     }
   ]
 }
