@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794687418389,
+      "tag": "0000_fantasy_league_foundation",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794687467228,
+      "tag": "0001_official_2026_player_pool",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794687514038,
+      "tag": "0002_draft_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794687841100,
+      "tag": "0003_weekly_results",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794687959658,
+      "tag": "0004_optional_lock_time",
+      "breakpoints": true
+    }
+  ]
+}
