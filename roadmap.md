@@ -3,4 +3,4 @@
 - [x] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
 - [x] Add scoring/roster rule tests and verify all supplied canvas sizes.
 - [ ] Verify signed-in league creation, joining, draft, swaps and claims — requires the first Google sign-in; no auth users exist yet.
-- [ ] Fix and verify the shared fantasy-context blank-screen error during preview refreshes.
+- [x] Fix and verify the shared fantasy-context blank-screen error during preview refreshes.
