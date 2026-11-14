@@ -57,6 +57,13 @@
       "when": 1794689871868,
       "tag": "0007_player_trades_rolling_waivers",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794690023127,
+      "tag": "0008_transaction_concurrency_guards",
+      "breakpoints": true
     }
   ]
 }
