@@ -47,3 +47,4 @@ use the editor.
 - Hide the draft-room invite code when team count reaches max_teams (inviteOpen in league-experience); raising capacity re-shows it.
 
 - Delegate tools access through creator-managed league_roles.is_co_commissioner; use the authenticated league_commissioner helper for every management action and restrict role appointments to leagues.owner_id.
+- Enforce beta Google signup capacity with an auth insert trigger and an atomic private reservation counter; test boundary behavior in rollback-only transactions without creating managed auth users.
