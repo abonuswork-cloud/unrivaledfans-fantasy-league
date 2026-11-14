@@ -1,7 +1,17 @@
 import { describe, expect, it } from 'vitest'
-import { profileComplete, roundRobin, teamCapacities } from '@/lib/league-experience'
+import { defaultPickSeconds, normalizePickClockInput, profileComplete, roundRobin, teamCapacities } from '@/lib/league-experience'
 import games from '@/lib/official-games.json'
 describe('league setup and schedules', () => {
+  it('defaults the pick clock to 90 seconds', () => {
+    expect(defaultPickSeconds).toBe(90)
+  })
+  it('allows clearing 60 and entering 90 without a leading zero', () => {
+    expect(normalizePickClockInput('60')).toBe('60')
+    expect(normalizePickClockInput('')).toBe('')
+    expect(normalizePickClockInput('09')).toBe('9')
+    expect(normalizePickClockInput('090')).toBe('90')
+    expect(normalizePickClockInput('0090')).toBe('90')
+  })
   it('allows 2 through 8 teams with six players per team', () => {
     expect(teamCapacities).toEqual([2,3,4,5,6,7,8])
     expect(Math.max(...teamCapacities)*6).toBe(48)
