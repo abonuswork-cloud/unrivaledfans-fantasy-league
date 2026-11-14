@@ -78,6 +78,13 @@
       "when": 1794692981424,
       "tag": "0010_ninety_second_pick_clock_default",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1794693547528,
+      "tag": "0011_cpu_teams_pick_immediately",
+      "breakpoints": true
     }
   ]
 }
