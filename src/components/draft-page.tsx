@@ -6,7 +6,7 @@ import { supabase } from '@/integrations/supabase/client'
 import { DEMO, fantasyPoints, scoringFor, snakeTeam, initials, clubName } from '@/lib/fantasy'
 export function DraftPage() {
  const f=useFantasy();const [search,setSearch]=useState('');const [position,setPosition]=useState('All');const [now,setNow]=useState(Date.now());const [auto,setAuto]=useState(false)
- const draft=useFantasyAction(async(pid:string|null)=>{const r=await supabase.rpc('fantasy_draft',{lid:f.leagueId,pid:pid??undefined});if(r.error)throw new Error(r.error.message)})
+ const draft=useFantasyAction(async(pid:string|null)=>{const r=await supabase.rpc('fantasy_draft',{lid:f.leagueId,...(pid ? {pid} : {})});if(r.error)throw new Error(r.error.message)})
  const queue=useFantasyAction(async(pid:string)=>{if(!f.user)return;const existing=f.queue.find(q=>q.player_id===pid);const r=existing?await supabase.from('draft_queue').delete().eq('id',existing.id):await supabase.from('draft_queue').insert({league_id:f.leagueId,user_id:f.user.id,player_id:pid});if(r.error)throw new Error(r.error.message)})
  useEffect(()=>{const id=setInterval(()=>setNow(Date.now()),1000);return()=>clearInterval(id)},[])
  const teams=[...f.teams].sort((a,b)=>a.draft_order-b.draft_order);const pick=f.league?.current_pick??1;const current=teams[snakeTeam(pick,teams.length||1)];const myTurn=current?.owner_id===f.user?.id && !!f.user;const live=f.league?.draft_status==='live';const seconds=f.league?.pick_deadline?Math.max(0,Math.ceil((new Date(f.league.pick_deadline).getTime()-now)/1000)):f.league?.pick_seconds??60

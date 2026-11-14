@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { publicFantasy } from '@/lib/fantasy.functions';
 import { FantasyProvider } from '@/components/fantasy-provider';
 import { FantasyShell } from '@/components/fantasy-shell';
 
@@ -101,6 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
+  loader: () => publicFantasy(),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -127,7 +129,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <FantasyProvider><FantasyShell><Outlet /></FantasyShell></FantasyProvider>
+      <FantasyProvider initialData={Route.useLoaderData()}><FantasyShell><Outlet /></FantasyShell></FantasyProvider>
     </QueryClientProvider>
   );
 }
