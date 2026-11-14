@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CommissionerRouteImport } from './routes/commissioner'
+import { Route as DraftRouteImport } from './routes/draft'
+import { Route as PlayersRouteImport } from './routes/players'
+import { Route as StandingsRouteImport } from './routes/standings'
+import { Route as ApiPublicJobsStatsRouteImport } from './routes/api/public/jobs/stats'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommissionerRoute = CommissionerRouteImport.update({
+  id: '/commissioner',
+  path: '/commissioner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DraftRoute = DraftRouteImport.update({
+  id: '/draft',
+  path: '/draft',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayersRoute = PlayersRouteImport.update({
+  id: '/players',
+  path: '/players',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StandingsRoute = StandingsRouteImport.update({
+  id: '/standings',
+  path: '/standings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicJobsStatsRoute = ApiPublicJobsStatsRouteImport.update({
+  id: '/api/public/jobs/stats',
+  path: '/api/public/jobs/stats',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/commissioner': typeof CommissionerRoute
+  '/draft': typeof DraftRoute
+  '/players': typeof PlayersRoute
+  '/standings': typeof StandingsRoute
+  '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/commissioner': typeof CommissionerRoute
+  '/draft': typeof DraftRoute
+  '/players': typeof PlayersRoute
+  '/standings': typeof StandingsRoute
+  '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/commissioner': typeof CommissionerRoute
+  '/draft': typeof DraftRoute
+  '/players': typeof PlayersRoute
+  '/standings': typeof StandingsRoute
+  '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/commissioner'
+    | '/draft'
+    | '/players'
+    | '/standings'
+    | '/api/public/jobs/stats'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/commissioner'
+    | '/draft'
+    | '/players'
+    | '/standings'
+    | '/api/public/jobs/stats'
+  id:
+    | '__root__'
+    | '/'
+    | '/commissioner'
+    | '/draft'
+    | '/players'
+    | '/standings'
+    | '/api/public/jobs/stats'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CommissionerRoute: typeof CommissionerRoute
+  DraftRoute: typeof DraftRoute
+  PlayersRoute: typeof PlayersRoute
+  StandingsRoute: typeof StandingsRoute
+  ApiPublicJobsStatsRoute: typeof ApiPublicJobsStatsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/commissioner': {
+      id: '/commissioner'
+      path: '/commissioner'
+      fullPath: '/commissioner'
+      preLoaderRoute: typeof CommissionerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/draft': {
+      id: '/draft'
+      path: '/draft'
+      fullPath: '/draft'
+      preLoaderRoute: typeof DraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/players': {
+      id: '/players'
+      path: '/players'
+      fullPath: '/players'
+      preLoaderRoute: typeof PlayersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/standings': {
+      id: '/standings'
+      path: '/standings'
+      fullPath: '/standings'
+      preLoaderRoute: typeof StandingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/jobs/stats': {
+      id: '/api/public/jobs/stats'
+      path: '/api/public/jobs/stats'
+      fullPath: '/api/public/jobs/stats'
+      preLoaderRoute: typeof ApiPublicJobsStatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CommissionerRoute: CommissionerRoute,
+  DraftRoute: DraftRoute,
+  PlayersRoute: PlayersRoute,
+  StandingsRoute: StandingsRoute,
+  ApiPublicJobsStatsRoute: ApiPublicJobsStatsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
