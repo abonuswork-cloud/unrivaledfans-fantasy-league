@@ -21,3 +21,4 @@
 - [x] Hide draft-room invite code when teams = max_teams; show again if capacity raised
 - [x] Add owner-only co-commissioner promotion, enforce shared tools access, and give members profile details and a rulebook link.
 - [ ] Verify promotion and delegated tools with a second signed-in league member — current other Test league teams have no accounts.
+- [ ] Enforce a beta maximum of 30 Google signup accounts while preserving existing sign-ins.
