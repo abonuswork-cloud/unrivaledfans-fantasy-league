@@ -15,6 +15,13 @@
       "when": 1794687467228,
       "tag": "0001_official_2026_player_pool",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794687514038,
+      "tag": "0002_draft_actions",
+      "breakpoints": true
     }
   ]
 }

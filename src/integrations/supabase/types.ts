@@ -491,14 +491,29 @@ export type Database = {
         Args: { league_name: string; team_name: string }
         Returns: string
       }
+      fantasy_draft: { Args: { lid: string; pid?: string }; Returns: undefined }
       join_fantasy_league: {
         Args: { code: string; team_name: string }
         Returns: string
       }
       league_commissioner: { Args: { lid: string }; Returns: boolean }
       league_member: { Args: { lid: string }; Returns: boolean }
+      record_fantasy_boxscore: {
+        Args: { gdate: string; lid: string; pid: string; stats: Json }
+        Returns: undefined
+      }
       swap_lineup: {
         Args: { active_slot: number; bench_slot: number; tid: string }
+        Returns: undefined
+      }
+      update_fantasy_settings: {
+        Args: {
+          league_name: string
+          lid: string
+          lock_time: string
+          score: Json
+          seconds: number
+        }
         Returns: undefined
       }
     }
