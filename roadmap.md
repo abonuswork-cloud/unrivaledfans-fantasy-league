@@ -16,3 +16,5 @@
 - [x] Add an accessible league rulebook under League Standings for both members and commissioners.
 - [ ] Verify trade acceptance/counteroffers and competing waiver claims with two real managers after the draft — Test league is still waiting and placeholder teams have no accounts.
 - [x] Preserve the approved bottom navigation on narrow/mobile screens; omit duplicate header links.
+- [x] Add an unofficial fan-app footer disclaimer and hidden-address copy-email action on every page.
+- [ ] Create a self-contained developer handoff and export guide with current example screenshots and downloadable documentation.
