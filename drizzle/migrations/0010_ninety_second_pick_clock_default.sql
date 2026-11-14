@@ -1,0 +1,1 @@
+ALTER TABLE public.leagues ALTER COLUMN pick_seconds SET DEFAULT 90;

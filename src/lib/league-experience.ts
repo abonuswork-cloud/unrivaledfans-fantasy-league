@@ -1,4 +1,8 @@
 export const teamCapacities = [2, 3, 4, 5, 6, 7, 8] as const
+export const defaultPickSeconds = 90
+export function normalizePickClockInput(value: string) {
+  return value.replace(/^0+(?=\d)/, '')
+}
 export function profileComplete(profile: { first_name: string; last_name: string; preferred_team_name: string } | null | undefined) {
   return !!profile?.first_name.trim() && !!profile.last_name.trim() && profile.preferred_team_name.trim().length >= 2
 }

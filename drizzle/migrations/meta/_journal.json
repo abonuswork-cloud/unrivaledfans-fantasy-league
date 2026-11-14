@@ -71,6 +71,13 @@
       "when": 1794690126633,
       "tag": "0009_atomic_trade_schedule_refresh",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794692981424,
+      "tag": "0010_ninety_second_pick_clock_default",
+      "breakpoints": true
     }
   ]
 }
