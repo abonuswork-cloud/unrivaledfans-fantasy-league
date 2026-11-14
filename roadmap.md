@@ -1,4 +1,5 @@
 - [x] Enable Cloud and Google sign-in with profiles.
 - [x] Verify official 2026 club player averages; seed all eight clubs and player pool.
 - [x] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
-- [ ] Add scoring/roster rule tests and verify all supplied canvas sizes.
+- [x] Add scoring/roster rule tests and verify all supplied canvas sizes.
+- [ ] Verify signed-in league creation, joining, draft, swaps and claims — requires the first Google sign-in; no auth users exist yet.

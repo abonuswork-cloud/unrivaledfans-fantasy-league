@@ -21,7 +21,7 @@ export function useFantasyState(initialData: Awaited<ReturnType<typeof publicFan
     const [leagues, teams, slots, roles, picks, queue, activity, boxes] = await Promise.all([supabase.from('leagues').select('*').eq('is_demo', false), supabase.from('teams').select('*'), supabase.from('roster_slots').select('*'), supabase.from('league_roles').select('*'), supabase.from('draft_picks').select('*').order('pick_no'), supabase.from('draft_queue').select('*').order('created_at'), supabase.from('league_activity').select('*').order('created_at', { ascending: false }).limit(30), supabase.from('game_boxscores').select('*')])
     for (const r of [leagues, teams, slots, roles, picks, queue, activity, boxes]) if (r.error) throw new Error(r.error.message)
     return { leagues: leagues.data ?? [], teams: teams.data ?? [], slots: slots.data ?? [], roles: roles.data ?? [], picks: picks.data ?? [], queue: queue.data ?? [], activity: activity.data ?? [], boxes: boxes.data ?? [] }
-  }, refetchInterval: false })
+  }, refetchInterval: query => query.state.data?.leagues.some(l => l.id === leagueId && l.draft_status === 'live') ? 3000 : false })
   const leagues = [...(publicData.data?.leagues ?? []), ...(privateData.data?.leagues ?? [])]
   const league = leagues.find(l => l.id === leagueId) ?? leagues[0]
   const teams = (leagueId === DEMO ? publicData.data?.teams : privateData.data?.teams)?.filter(t => t.league_id === leagueId) ?? []
