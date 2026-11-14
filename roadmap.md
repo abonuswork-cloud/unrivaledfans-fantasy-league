@@ -4,3 +4,7 @@
 - [x] Add scoring/roster rule tests and verify all supplied canvas sizes.
 - [ ] Verify signed-in league creation, joining, draft, swaps and claims — requires the first Google sign-in; no auth users exist yet.
 - [x] Fix and verify the shared fantasy-context blank-screen error during preview refreshes.
+- [ ] Add first/last-name onboarding, custom team names, and shareable invitation links.
+- [ ] Expose league capacity and commissioner switches enforced for all managers.
+- [ ] Add a weekly matchup schedule tab with persisted pairings used by weekly results.
+- [ ] Replace the footer wording and verify the updated experiences.
