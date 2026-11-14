@@ -1,4 +1,4 @@
-- [ ] Enable Cloud and Google sign-in with profiles.
-- [ ] Verify official club rosters and season averages; seed database.
-- [ ] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
+- [x] Enable Cloud and Google sign-in with profiles.
+- [x] Verify official 2026 club player averages; seed all eight clubs and player pool.
+- [x] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
 - [ ] Add scoring/roster rule tests and verify all supplied canvas sizes.

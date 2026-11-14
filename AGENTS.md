@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep public fantasy browsing at top-level content routes; private mutations use authenticated database RPCs and owner/commissioner checks so the seeded example stays read-only.
+- Store roles separately in league_roles and execute roster/draft changes atomically in PostgreSQL to prevent concurrent ownership conflicts.
+- Fetch official club statistics in the shared server-only sync module; the daily managed callback and authenticated commissioner action share it to preserve one parsing contract.
+- Use FantasyProvider for identity and query state and FantasyShell for shared kit chrome; private queries remain disabled without an authenticated session.
