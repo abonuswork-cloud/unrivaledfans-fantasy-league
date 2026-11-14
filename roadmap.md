@@ -14,3 +14,4 @@
 - [ ] Allow immediate post-draft swaps from the undrafted available pool.
 - [ ] Research and choose simple dropped-player waiver priority and claim rules before implementation.
 - [ ] Add an accessible league rulebook under League Standings for both members and commissioners.
+- [ ] Keep full header navigation visible in narrow/mobile windows and verify resizing.
