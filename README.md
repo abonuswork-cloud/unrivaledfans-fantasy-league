@@ -1,29 +1,26 @@
-# Welcome to your Lovable project
+# Unrivaled Fantasy (Beta)
 
-This project was built with [Lovable](https://lovable.dev).
+Fan-built, unofficial fantasy basketball for Unrivaled's 3-on-3 women's league. Not affiliated with Unrivaled.
 
-## Build with Lovable
+## Features
+- **Welcome popup** for first-time visitors (once per session): app summary, read-only example league notice, Google sign-up call to action.
+- **Beta label** beside the "Unrivaled Fantasy" header brand.
+- **My Roster** — Guard / Forward / Flex starters + 3 bench, swaps, matchup bars derived from active slots.
+- **Draft Room** — 6-round snake draft, queue, 90-second default clock, auto-pick; ownerless teams pick instantly.
+  - **Mock drafts**: commissioner can Start mock draft (dashed "MOCK DRAFT · Practice only" banner) and Reset draft.
+  - Invite code shows only while the league has open spots (hidden at max teams, shown again if capacity is raised).
+- **Players & Waivers** — player pool, free-agent pickups, one-for-one trades with game-day lock, 24-hour rolling waivers.
+- **League Standings** — records with **View roster** for every team, fantasy schedule, official Unrivaled games, rulebook.
+- **Commissioner Tools** — capacity (2–8), invitation/pickup/swap switches, pick clock, scoring, box scores, weekly finalization.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Stack
+React 19 + TypeScript, TanStack Start/Router/Query, Tailwind CSS v4, Vite, Vitest, PostgreSQL via Lovable Cloud (RLS + stored procedures, migrations in `drizzle/migrations`).
 
 ## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
+bunx vitest run
 ```
 
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+See the developer handoff guide (v2, with screenshots) for setup, data model, migration and mobile-port details.
