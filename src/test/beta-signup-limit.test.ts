@@ -1,8 +1,8 @@
 import { expect, it } from 'vitest'
 import postgres from 'postgres'
 
-it.skipIf(!process.env['SUPABASE_DB_URL'])('allows Google user 30, rejects user 31, and leaves existing sign-ins unaffected', async () => {
-  const url = process.env['SUPABASE_DB_URL']
+it.skipIf(!process.env['BETA_TEST_DATABASE_URL'])('allows Google user 30, rejects user 31, and leaves existing sign-ins unaffected', async () => {
+  const url = process.env['BETA_TEST_DATABASE_URL']
   if (!url) return
   const sql = postgres(url, { max: 1 })
   try {
