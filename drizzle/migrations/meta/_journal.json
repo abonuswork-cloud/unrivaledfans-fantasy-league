@@ -64,6 +64,13 @@
       "when": 1794690023127,
       "tag": "0008_transaction_concurrency_guards",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794690126633,
+      "tag": "0009_atomic_trade_schedule_refresh",
+      "breakpoints": true
     }
   ]
 }

@@ -905,6 +905,7 @@ export type Database = {
         Args: { gdate: string; lid: string; pid: string; stats: Json }
         Returns: undefined
       }
+      replace_trade_game_days: { Args: { days: Json }; Returns: undefined }
       resolve_league_waivers: { Args: { lid: string }; Returns: undefined }
       respond_player_trade: {
         Args: { decision: string; trade_id: string }
