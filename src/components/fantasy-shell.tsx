@@ -10,7 +10,7 @@ import { supabase } from '@/integrations/supabase/client'
 import { ManagerProfile } from './manager-profile'
 import { profileComplete } from '@/lib/league-experience'
 import { DEMO, initials } from '@/lib/fantasy'
-const nav = [{ to: '/', label: 'My Roster', short: 'Roster', icon: Users }, { to: '/draft', label: 'Draft Room', short: 'Draft', icon: LayoutGrid }, { to: '/players', label: 'Players & Waivers', short: 'Players', icon: Search }, { to: '/standings', label: 'League Standings', short: 'League', icon: Trophy }, { to: '/commissioner', label: 'Commissioner Tools', short: 'Tools', icon: Settings2 }] as const
+const nav = [{ to: '/', label: 'My Roster', short: 'Roster', icon: Users }, { to: '/players', label: 'Players & Waivers', short: 'Players', icon: Search }, { to: '/standings', label: 'League Standings', short: 'League', icon: Trophy }, { to: '/draft', label: 'Draft Room', short: 'Draft', icon: LayoutGrid }, { to: '/commissioner', label: 'Commissioner Tools', short: 'Tools', icon: Settings2 }] as const
 export function FantasyShell({ children }: { children: React.ReactNode }) {
   const f = useFantasy(); const path = useRouterState({ select: s => s.location.pathname }); const qc = useQueryClient()
   const [account, setAccount] = useState(false); const [leagueModal, setLeagueModal] = useState(false); const [mode, setMode] = useState<'create'|'join'>('create'); const [name, setName] = useState(''); const [team, setTeam] = useState(''); const [code, setCode] = useState('')
