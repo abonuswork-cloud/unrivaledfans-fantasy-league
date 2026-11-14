@@ -36,6 +36,20 @@
       "when": 1794687959658,
       "tag": "0004_optional_lock_time",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794688618004,
+      "tag": "0005_league_onboarding_controls_schedule",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794688784485,
+      "tag": "0006_independent_roster_switch_guards",
+      "breakpoints": true
     }
   ]
 }
