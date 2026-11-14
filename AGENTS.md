@@ -35,3 +35,6 @@ use the editor.
 - Fetch official club statistics in the shared server-only sync module; the daily managed callback and authenticated commissioner action share it to preserve one parsing contract.
 - Use FantasyProvider for identity and query state and FantasyShell for shared kit chrome; private queries remain disabled without an authenticated session.
 - Define fantasy context identity in a component-free module separate from the provider so preview hot updates cannot disconnect mounted consumers.
+- Persist fantasy round-robin pairings at draft completion and use them for weekly result finalization so displayed opponents match recorded results.
+- Keep announced official club games separate from fantasy pairings; label the checked date and link to the official source because tipoffs can change.
+- Collect manager names and preferred team names in the existing profile, and enforce league control switches inside the corresponding database actions.
