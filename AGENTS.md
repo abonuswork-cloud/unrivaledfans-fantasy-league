@@ -45,3 +45,6 @@ use the editor.
 - Derive matchup projection values and proportional widths together from numbered active slots, never array positions or fixed CSS widths, so empty and missing positions stay accurate.
 - Keep editable pick-clock values as normalized strings until submission and share the numeric fallback through league-experience so clearing the field never inserts a zero.
 - Hide the draft-room invite code when team count reaches max_teams (inviteOpen in league-experience); raising capacity re-shows it.
+
+- Delegate tools access through creator-managed league_roles.is_co_commissioner; use the authenticated league_commissioner helper for every management action and restrict role appointments to leagues.owner_id.
+- Enforce beta Google signup capacity with an auth insert trigger and an atomic private reservation counter; test boundary behavior in rollback-only transactions without creating managed auth users.

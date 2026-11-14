@@ -1,0 +1,8 @@
+CREATE TABLE public.beta_signup_capacity (id integer PRIMARY KEY CHECK(id=1), google_users integer NOT NULL DEFAULT 0 CHECK(google_users>=0), max_google_users integer NOT NULL DEFAULT 30 CHECK(max_google_users=30));
+GRANT ALL ON public.beta_signup_capacity TO service_role;
+ALTER TABLE public.beta_signup_capacity ENABLE ROW LEVEL SECURITY;
+INSERT INTO public.beta_signup_capacity(id,google_users) SELECT 1,count(*) FROM auth.users WHERE raw_app_meta_data->>'provider'='google' OR (raw_app_meta_data->'providers') ? 'google';
+CREATE FUNCTION public.enforce_beta_google_signup_limit() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path=public AS $$ BEGIN IF NEW.raw_app_meta_data->>'provider'='google' OR (NEW.raw_app_meta_data->'providers') ? 'google' THEN UPDATE public.beta_signup_capacity SET google_users=google_users+1 WHERE id=1 AND google_users<max_google_users; IF NOT FOUND THEN RAISE EXCEPTION 'Beta signup is full: the 30 Google user limit has been reached. Existing members can still sign in.'; END IF; END IF; RETURN NEW; END $$;
+REVOKE ALL ON FUNCTION public.enforce_beta_google_signup_limit() FROM PUBLIC,anon,authenticated;
+CREATE TRIGGER beta_google_signup_limit BEFORE INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION public.enforce_beta_google_signup_limit();
+COMMENT ON TABLE public.beta_signup_capacity IS 'Atomic beta Google signup reservation counter; failed signup transactions roll back reservations. Existing sign-ins do not consume places.';
