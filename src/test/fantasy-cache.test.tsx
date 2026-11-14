@@ -9,7 +9,7 @@ import {useFantasyState} from '@/components/fantasy-provider'
 describe('cached league data recovery',()=>{
  it('handles pre-trade cached results with missing new arrays',()=>{
   mocks.query.mockImplementation((options:{queryKey:string[]})=>options.queryKey[0]==='fantasy-public'?{data:{leagues:[],teams:[],slots:[],players:[],activity:[]},isLoading:false,error:null}:{data:{leagues:[],teams:[],slots:[],roles:[],picks:[],queue:[],boxes:[],activity:[]},isPending:false,error:null})
-  const {result}=renderHook(()=>useFantasyState({leagues:[],teams:[],slots:[],players:[],activity:[],sync:null}))
+  const {result}=renderHook(()=>useFantasyState({leagues:[],teams:[],slots:[],players:[],activity:[],sync:{last_success:null}}))
   expect(result.current.trades).toEqual([])
   expect(result.current.claims).toEqual([])
   expect(result.current.waivers).toEqual([])
@@ -20,7 +20,7 @@ describe('cached league data recovery',()=>{
  it('keeps cached content usable when a refresh fails',()=>{
   const error=new TypeError('Failed to fetch')
   mocks.query.mockImplementation((options:{queryKey:string[]})=>options.queryKey[0]==='fantasy-public'?{data:{leagues:[],teams:[],slots:[],players:[],activity:[]},isLoading:false,error}:{data:undefined,isPending:true,error:null})
-  const {result}=renderHook(()=>useFantasyState({leagues:[],teams:[],slots:[],players:[],activity:[],sync:null}))
+  const {result}=renderHook(()=>useFantasyState({leagues:[],teams:[],slots:[],players:[],activity:[],sync:{last_success:null}}))
   expect(result.current.error).toBe(error)
   expect(result.current.loading).toBe(false)
   expect(result.current.trades).toEqual([])
