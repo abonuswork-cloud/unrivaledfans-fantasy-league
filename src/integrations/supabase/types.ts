@@ -477,6 +477,45 @@ export type Database = {
         }
         Relationships: []
       }
+      weekly_results: {
+        Row: {
+          id: string
+          league_id: string
+          points: number
+          team_id: string
+          week_start: string
+        }
+        Insert: {
+          id?: string
+          league_id: string
+          points: number
+          team_id: string
+          week_start: string
+        }
+        Update: {
+          id?: string
+          league_id?: string
+          points?: number
+          team_id?: string
+          week_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "weekly_results_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "weekly_results_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -492,6 +531,10 @@ export type Database = {
         Returns: string
       }
       fantasy_draft: { Args: { lid: string; pid?: string }; Returns: undefined }
+      finalize_fantasy_week: {
+        Args: { lid: string; week_start: string }
+        Returns: undefined
+      }
       join_fantasy_league: {
         Args: { code: string; team_name: string }
         Returns: string
