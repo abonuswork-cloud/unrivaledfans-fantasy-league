@@ -323,6 +323,163 @@ export type Database = {
         }
         Relationships: []
       }
+      official_game_days: {
+        Row: {
+          club_id: string
+          game_date: string
+        }
+        Insert: {
+          club_id: string
+          game_date: string
+        }
+        Update: {
+          club_id?: string
+          game_date?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "official_game_days_club_id_fkey"
+            columns: ["club_id"]
+            isOneToOne: false
+            referencedRelation: "unrivaled_clubs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      player_trades: {
+        Row: {
+          created_at: string
+          from_team: string
+          id: string
+          league_id: string
+          offered_player: string
+          parent_trade: string | null
+          requested_player: string
+          status: string
+          to_team: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          from_team: string
+          id?: string
+          league_id: string
+          offered_player: string
+          parent_trade?: string | null
+          requested_player: string
+          status?: string
+          to_team: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          from_team?: string
+          id?: string
+          league_id?: string
+          offered_player?: string
+          parent_trade?: string | null
+          requested_player?: string
+          status?: string
+          to_team?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "player_trades_from_team_fkey"
+            columns: ["from_team"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_trades_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_trades_offered_player_fkey"
+            columns: ["offered_player"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_trades_parent_trade_fkey"
+            columns: ["parent_trade"]
+            isOneToOne: false
+            referencedRelation: "player_trades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_trades_requested_player_fkey"
+            columns: ["requested_player"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_trades_to_team_fkey"
+            columns: ["to_team"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      player_waivers: {
+        Row: {
+          created_at: string
+          dropped_by: string
+          expires_at: string
+          id: string
+          league_id: string
+          player_id: string
+          resolved: boolean
+        }
+        Insert: {
+          created_at?: string
+          dropped_by: string
+          expires_at?: string
+          id?: string
+          league_id: string
+          player_id: string
+          resolved?: boolean
+        }
+        Update: {
+          created_at?: string
+          dropped_by?: string
+          expires_at?: string
+          id?: string
+          league_id?: string
+          player_id?: string
+          resolved?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "player_waivers_dropped_by_fkey"
+            columns: ["dropped_by"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_waivers_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_waivers_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       players: {
         Row: {
           ast: number
@@ -458,6 +615,21 @@ export type Database = {
           },
         ]
       }
+      schedule_checks: {
+        Row: {
+          check_date: string
+          checked_at: string
+        }
+        Insert: {
+          check_date: string
+          checked_at?: string
+        }
+        Update: {
+          check_date?: string
+          checked_at?: string
+        }
+        Relationships: []
+      }
       stats_sync: {
         Row: {
           error: string | null
@@ -547,6 +719,91 @@ export type Database = {
         }
         Relationships: []
       }
+      waiver_claims: {
+        Row: {
+          created_at: string
+          drop_player: string | null
+          drop_slot: number
+          id: string
+          status: string
+          team_id: string
+          waiver_id: string
+        }
+        Insert: {
+          created_at?: string
+          drop_player?: string | null
+          drop_slot: number
+          id?: string
+          status?: string
+          team_id: string
+          waiver_id: string
+        }
+        Update: {
+          created_at?: string
+          drop_player?: string | null
+          drop_slot?: number
+          id?: string
+          status?: string
+          team_id?: string
+          waiver_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "waiver_claims_drop_player_fkey"
+            columns: ["drop_player"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "waiver_claims_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "waiver_claims_waiver_id_fkey"
+            columns: ["waiver_id"]
+            isOneToOne: false
+            referencedRelation: "player_waivers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      waiver_priority: {
+        Row: {
+          league_id: string
+          rank: number
+          team_id: string
+        }
+        Insert: {
+          league_id: string
+          rank: number
+          team_id: string
+        }
+        Update: {
+          league_id?: string
+          rank?: number
+          team_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "waiver_priority_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "waiver_priority_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: true
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       weekly_results: {
         Row: {
           id: string
@@ -593,6 +850,17 @@ export type Database = {
     Functions: {
       build_league_schedule: { Args: { lid: string }; Returns: undefined }
       can_read_league: { Args: { lid: string }; Returns: boolean }
+      cancel_waiver_claim: { Args: { cid: string }; Returns: undefined }
+      check_trade_players: {
+        Args: {
+          from_id: string
+          get_id: string
+          give_id: string
+          lid: string
+          to_id: string
+        }
+        Returns: undefined
+      }
       claim_player: {
         Args: { drop_slot?: number; pid: string; tid: string }
         Returns: undefined
@@ -623,8 +891,28 @@ export type Database = {
       }
       league_commissioner: { Args: { lid: string }; Returns: boolean }
       league_member: { Args: { lid: string }; Returns: boolean }
+      offer_player_trade: {
+        Args: {
+          from_id: string
+          get_id: string
+          give_id: string
+          parent_id?: string
+          to_id: string
+        }
+        Returns: string
+      }
       record_fantasy_boxscore: {
         Args: { gdate: string; lid: string; pid: string; stats: Json }
+        Returns: undefined
+      }
+      replace_trade_game_days: { Args: { days: Json }; Returns: undefined }
+      resolve_league_waivers: { Args: { lid: string }; Returns: undefined }
+      respond_player_trade: {
+        Args: { decision: string; trade_id: string }
+        Returns: undefined
+      }
+      submit_waiver_claim: {
+        Args: { slot_no: number; tid: string; wid: string }
         Returns: undefined
       }
       swap_lineup: {

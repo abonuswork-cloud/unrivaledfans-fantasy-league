@@ -10,6 +10,9 @@
 - [x] Replace the footer wording and verify the updated experiences.
 - [x] Add separate access to the official Unrivaled game schedule, distinct from fantasy matchups.
 - [x] Add five clearly labeled test teams to the commissioner’s Test league and verify they appear.
-- [ ] Establish post-draft player trades with accept, deny, and counteroffer responses, excluding players playing today.
-- [ ] Allow immediate post-draft swaps from the undrafted available pool.
-- [ ] Research and choose simple dropped-player waiver priority and claim rules before implementation.
+- [x] Establish post-draft player trades with accept, deny, and counteroffer responses, excluding players playing today.
+- [x] Allow immediate post-draft swaps from the undrafted available pool.
+- [x] Research and implement the approved 24-hour rolling dropped-player waiver rules.
+- [x] Add an accessible league rulebook under League Standings for both members and commissioners.
+- [ ] Verify trade acceptance/counteroffers and competing waiver claims with two real managers after the draft — Test league is still waiting and placeholder teams have no accounts.
+- [x] Preserve the approved bottom navigation on narrow/mobile screens; omit duplicate header links.
