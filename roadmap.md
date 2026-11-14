@@ -8,3 +8,4 @@
 - [ ] Expose league capacity and commissioner switches enforced for all managers.
 - [ ] Add a weekly matchup schedule tab with persisted pairings used by weekly results.
 - [ ] Replace the footer wording and verify the updated experiences.
+- [ ] Add separate access to the official Unrivaled game schedule, distinct from fantasy matchups.
