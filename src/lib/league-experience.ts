@@ -24,3 +24,5 @@ export function roundRobin(ids: string[]) {
   }
   return weeks
 }
+/** Invite code is shown only while the league has open team spots. */
+export function inviteOpen(teamCount: number, maxTeams: number | null | undefined) { return teamCount < (maxTeams ?? 6) }
