@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      beta_signup_capacity: {
+        Row: {
+          google_users: number
+          id: number
+          max_google_users: number
+        }
+        Insert: {
+          google_users?: number
+          id: number
+          max_google_users?: number
+        }
+        Update: {
+          google_users?: number
+          id?: number
+          max_google_users?: number
+        }
+        Relationships: []
+      }
       draft_picks: {
         Row: {
           auto_pick: boolean
