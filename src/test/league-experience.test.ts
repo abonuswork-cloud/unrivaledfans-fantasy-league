@@ -39,3 +39,9 @@ describe('league setup and schedules', () => {
     expect(games.every(g=>g.url.startsWith('https://www.unrivaled.basketball/game/'))).toBe(true)
   })
 })
+import { inviteOpen } from '@/lib/league-experience'
+import { describe as d2, it as i2, expect as e2 } from 'vitest'
+d2('invite code visibility', () => {
+  i2('hides when 6 of 6 teams are filled', () => e2(inviteOpen(6, 6)).toBe(false))
+  i2('shows again when capacity is raised to 8', () => e2(inviteOpen(6, 8)).toBe(true))
+})
