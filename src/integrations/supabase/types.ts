@@ -916,6 +916,7 @@ export type Database = {
         Returns: undefined
       }
       start_mock_draft: { Args: { lid: string }; Returns: undefined }
+      stats_last_success: { Args: never; Returns: string }
       submit_waiver_claim: {
         Args: { slot_no: number; tid: string; wid: string }
         Returns: undefined
