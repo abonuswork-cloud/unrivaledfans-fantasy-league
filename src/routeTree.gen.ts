@@ -15,6 +15,7 @@ import { Route as DraftRouteImport } from './routes/draft'
 import { Route as PlayersRouteImport } from './routes/players'
 import { Route as StandingsRouteImport } from './routes/standings'
 import { Route as ApiPublicJobsStatsRouteImport } from './routes/api/public/jobs/stats'
+import { Route as ApiPublicJobsWaiversRouteImport } from './routes/api/public/jobs/waivers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const ApiPublicJobsStatsRoute = ApiPublicJobsStatsRouteImport.update({
   path: '/api/public/jobs/stats',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicJobsWaiversRoute = ApiPublicJobsWaiversRouteImport.update({
+  id: '/api/public/jobs/waivers',
+  path: '/api/public/jobs/waivers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/players': typeof PlayersRoute
   '/standings': typeof StandingsRoute
   '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
+  '/api/public/jobs/waivers': typeof ApiPublicJobsWaiversRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/players': typeof PlayersRoute
   '/standings': typeof StandingsRoute
   '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
+  '/api/public/jobs/waivers': typeof ApiPublicJobsWaiversRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/players': typeof PlayersRoute
   '/standings': typeof StandingsRoute
   '/api/public/jobs/stats': typeof ApiPublicJobsStatsRoute
+  '/api/public/jobs/waivers': typeof ApiPublicJobsWaiversRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/players'
     | '/standings'
     | '/api/public/jobs/stats'
+    | '/api/public/jobs/waivers'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/players'
     | '/standings'
     | '/api/public/jobs/stats'
+    | '/api/public/jobs/waivers'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/players'
     | '/standings'
     | '/api/public/jobs/stats'
+    | '/api/public/jobs/waivers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   PlayersRoute: typeof PlayersRoute
   StandingsRoute: typeof StandingsRoute
   ApiPublicJobsStatsRoute: typeof ApiPublicJobsStatsRoute
+  ApiPublicJobsWaiversRoute: typeof ApiPublicJobsWaiversRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicJobsStatsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/jobs/waivers': {
+      id: '/api/public/jobs/waivers'
+      path: '/api/public/jobs/waivers'
+      fullPath: '/api/public/jobs/waivers'
+      preLoaderRoute: typeof ApiPublicJobsWaiversRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlayersRoute: PlayersRoute,
   StandingsRoute: StandingsRoute,
   ApiPublicJobsStatsRoute: ApiPublicJobsStatsRoute,
+  ApiPublicJobsWaiversRoute: ApiPublicJobsWaiversRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
