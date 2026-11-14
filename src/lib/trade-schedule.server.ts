@@ -15,10 +15,6 @@ export async function refreshTradeSchedule() {
   events.each((_,e)=> { const day=$(e).find('time[datetime]').attr('datetime'); if (!day || !/^\d{4}-\d{2}-\d{2}$/.test(day)) return; $(e).find('[class*="teamName__"]').each((_,t)=> {const club=$(t).text().trim().toLowerCase().replaceAll(' ','-'); if(clubs.includes(club)) days.push({club_id:club,game_date:day})}) })
   if (!days.length) throw new Error('Official club games could not be verified; trades are temporarily paused.')
   const unique=[...new Map(days.map(d=>[`${d.club_id}:${d.game_date}`,d])).values()]
-  const cleared=await db.from('official_game_days').delete().gte('game_date',today)
-  if(cleared.error) throw new Error('Game-day checks could not refresh')
-  const inserted=await db.from('official_game_days').upsert(unique)
-  if(inserted.error) throw new Error('Game-day checks could not refresh')
-  const check=await db.from('schedule_checks').upsert({check_date:today,checked_at:new Date().toISOString()})
+  const check=await db.rpc('replace_trade_game_days',{days:unique})
   if(check.error) throw new Error('Game-day checks could not refresh')
 }
