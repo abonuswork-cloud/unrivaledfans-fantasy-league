@@ -34,3 +34,4 @@ use the editor.
 - Store roles separately in league_roles and execute roster/draft changes atomically in PostgreSQL to prevent concurrent ownership conflicts.
 - Fetch official club statistics in the shared server-only sync module; the daily managed callback and authenticated commissioner action share it to preserve one parsing contract.
 - Use FantasyProvider for identity and query state and FantasyShell for shared kit chrome; private queries remain disabled without an authenticated session.
+- Define fantasy context identity in a component-free module separate from the provider so preview hot updates cannot disconnect mounted consumers.

@@ -1,4 +1,6 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { FantasyContext, useFantasy } from './fantasy-context'
+export { useFantasy } from './fantasy-context'
 import { useQuery, useQueryClient, useMutation, queryOptions } from '@tanstack/react-query'
 import { useServerFn } from '@tanstack/react-start'
 import { supabase } from '@/integrations/supabase/client'
@@ -32,8 +34,5 @@ export function useFantasyState(initialData: Awaited<ReturnType<typeof publicFan
   const invalidate = () => Promise.all([queryClient.invalidateQueries({ queryKey: ['fantasy-private'] }), queryClient.invalidateQueries({ queryKey: ['fantasy-public'] })])
   return { user, ready, leagueId, setLeagueId, league, leagues, teams, myTeam, slots, players: publicData.data?.players ?? [], activity, commissioner, picks: privateData.data?.picks.filter(p => p.league_id === leagueId) ?? [], queue: privateData.data?.queue.filter(q => q.league_id === leagueId) ?? [], boxes: privateData.data?.boxes.filter(b => b.league_id === leagueId) ?? [], sync: publicData.data?.sync, loading: publicData.isLoading, error: publicData.error ?? privateData.error, invalidate }
 }
-type FantasyState = ReturnType<typeof useFantasyState>
-const Context = createContext<FantasyState | null>(null)
-export function FantasyProvider({ children, initialData }: { children: ReactNode; initialData: Awaited<ReturnType<typeof publicFantasy>> }) { const state = useFantasyState(initialData); return <Context.Provider value={state}>{children}</Context.Provider> }
-export function useFantasy() { const value = useContext(Context); if (!value) throw new Error('Fantasy context is missing'); return value }
+export function FantasyProvider({ children, initialData }: { children: ReactNode; initialData: Awaited<ReturnType<typeof publicFantasy>> }) { const state = useFantasyState(initialData); return <FantasyContext.Provider value={state}>{children}</FantasyContext.Provider> }
 export function useFantasyAction<T = void>(fn: (data: T) => Promise<unknown>) { const { invalidate } = useFantasy(); return useMutation({ mutationFn: fn, onSuccess: () => invalidate() }) }
