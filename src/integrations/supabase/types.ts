@@ -553,7 +553,7 @@ export type Database = {
         Args: {
           league_name: string
           lid: string
-          lock_time: string
+          lock_time?: string
           score: Json
           seconds: number
         }
