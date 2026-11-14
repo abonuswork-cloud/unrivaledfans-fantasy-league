@@ -1,0 +1,4 @@
+- [ ] Enable Cloud and Google sign-in with profiles.
+- [ ] Verify official club rosters and season averages; seed database.
+- [ ] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
+- [ ] Add scoring/roster rule tests and verify all supplied canvas sizes.
