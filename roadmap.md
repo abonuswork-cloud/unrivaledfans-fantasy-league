@@ -2,11 +2,11 @@
 - [x] Verify official 2026 club player averages; seed all eight clubs and player pool.
 - [x] Build roster swaps, league creation/joining, draft, waivers, standings, settings.
 - [x] Add scoring/roster rule tests and verify all supplied canvas sizes.
-- [ ] Verify signed-in league creation, joining, draft, swaps and claims — requires the first Google sign-in; no auth users exist yet.
+- [ ] Verify league joining, draft picks, swaps and claims — needs a separate member account and user-approved test actions; commissioner standings verified.
 - [x] Fix and verify the shared fantasy-context blank-screen error during preview refreshes.
 - [x] Add first/last-name onboarding, custom team names, and shareable invitation links.
 - [x] Expose league capacity and commissioner switches enforced for all managers.
 - [x] Add a weekly matchup schedule tab with persisted pairings used by weekly results.
 - [x] Replace the footer wording and verify the updated experiences.
 - [x] Add separate access to the official Unrivaled game schedule, distinct from fantasy matchups.
-- [ ] Add five clearly labeled test teams to the commissioner’s Test league and verify they appear.
+- [x] Add five clearly labeled test teams to the commissioner’s Test league and verify they appear.
