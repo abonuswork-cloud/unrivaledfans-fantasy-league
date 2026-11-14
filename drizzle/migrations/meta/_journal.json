@@ -50,6 +50,13 @@
       "when": 1794688784485,
       "tag": "0006_independent_roster_switch_guards",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1794689871868,
+      "tag": "0007_player_trades_rolling_waivers",
+      "breakpoints": true
     }
   ]
 }
