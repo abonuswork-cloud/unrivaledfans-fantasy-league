@@ -9,3 +9,4 @@
 - [x] Add a weekly matchup schedule tab with persisted pairings used by weekly results.
 - [x] Replace the footer wording and verify the updated experiences.
 - [x] Add separate access to the official Unrivaled game schedule, distinct from fantasy matchups.
+- [ ] Add five clearly labeled test teams to the commissioner’s Test league and verify they appear.
