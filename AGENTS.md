@@ -38,3 +38,6 @@ use the editor.
 - Persist fantasy round-robin pairings at draft completion and use them for weekly result finalization so displayed opponents match recorded results.
 - Keep announced official club games separate from fantasy pairings; label the checked date and link to the official source because tipoffs can change.
 - Collect manager names and preferred team names in the existing profile, and enforce league control switches inside the corresponding database actions.
+- Execute trade acceptance, direct pickups, and rolling-waiver resolution under a league row lock; only owners submit or respond, preventing conflicting player transfers.
+- Verify fresh official club game days before trade offers and acceptance; fail closed if schedule verification fails so the game-day restriction cannot be bypassed.
+- Resolve expired waivers with the managed minute callback and authenticated league reads; claims retain the original dropped-player identity to reject stale roster changes.
