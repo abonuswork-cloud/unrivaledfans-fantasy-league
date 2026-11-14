@@ -272,6 +272,7 @@ export type Database = {
           invitations_enabled: boolean
           invite_code: string
           is_demo: boolean
+          is_mock: boolean
           lock_at: string | null
           max_teams: number
           name: string
@@ -291,6 +292,7 @@ export type Database = {
           invitations_enabled?: boolean
           invite_code?: string
           is_demo?: boolean
+          is_mock?: boolean
           lock_at?: string | null
           max_teams?: number
           name: string
@@ -310,6 +312,7 @@ export type Database = {
           invitations_enabled?: boolean
           invite_code?: string
           is_demo?: boolean
+          is_mock?: boolean
           lock_at?: string | null
           max_teams?: number
           name?: string
@@ -906,11 +909,13 @@ export type Database = {
         Returns: undefined
       }
       replace_trade_game_days: { Args: { days: Json }; Returns: undefined }
+      reset_league_draft: { Args: { lid: string }; Returns: undefined }
       resolve_league_waivers: { Args: { lid: string }; Returns: undefined }
       respond_player_trade: {
         Args: { decision: string; trade_id: string }
         Returns: undefined
       }
+      start_mock_draft: { Args: { lid: string }; Returns: undefined }
       submit_waiver_claim: {
         Args: { slot_no: number; tid: string; wid: string }
         Returns: undefined
