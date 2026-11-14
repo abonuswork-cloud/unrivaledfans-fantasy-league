@@ -17,4 +17,6 @@
 - [ ] Verify trade acceptance/counteroffers and competing waiver claims with two real managers after the draft — Test league is still waiting and placeholder teams have no accounts.
 - [x] Preserve the approved bottom navigation on narrow/mobile screens; omit duplicate header links.
 - [x] Add an unofficial fan-app footer disclaimer and hidden-address copy-email action on every page.
-- [x] Create a self-contained developer handoff and export guide with current example screenshots and downloadable documentation.- [x] Hide draft-room invite code when teams = max_teams; show again if capacity raised
+- [x] Create a self-contained developer handoff and export guide with current example screenshots and downloadable documentation.
+- [x] Hide draft-room invite code when teams = max_teams; show again if capacity raised
+- [ ] Add owner-only co-commissioner promotion, enforce shared tools access, and give members profile details and a rulebook link.
