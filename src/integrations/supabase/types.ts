@@ -188,6 +188,55 @@ export type Database = {
           },
         ]
       }
+      league_matchups: {
+        Row: {
+          away_team_id: string | null
+          home_team_id: string
+          id: string
+          league_id: string
+          week_no: number
+          week_start: string
+        }
+        Insert: {
+          away_team_id?: string | null
+          home_team_id: string
+          id?: string
+          league_id: string
+          week_no: number
+          week_start: string
+        }
+        Update: {
+          away_team_id?: string | null
+          home_team_id?: string
+          id?: string
+          league_id?: string
+          week_no?: number
+          week_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "league_matchups_away_team_id_fkey"
+            columns: ["away_team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "league_matchups_home_team_id_fkey"
+            columns: ["home_team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "league_matchups_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       league_roles: {
         Row: {
           league_id: string
@@ -220,6 +269,7 @@ export type Database = {
           current_pick: number
           draft_status: string
           id: string
+          invitations_enabled: boolean
           invite_code: string
           is_demo: boolean
           lock_at: string | null
@@ -228,13 +278,17 @@ export type Database = {
           owner_id: string | null
           pick_deadline: string | null
           pick_seconds: number
+          pickups_enabled: boolean
           scoring: Json
+          season_start: string | null
+          swaps_enabled: boolean
         }
         Insert: {
           created_at?: string
           current_pick?: number
           draft_status?: string
           id?: string
+          invitations_enabled?: boolean
           invite_code?: string
           is_demo?: boolean
           lock_at?: string | null
@@ -243,13 +297,17 @@ export type Database = {
           owner_id?: string | null
           pick_deadline?: string | null
           pick_seconds?: number
+          pickups_enabled?: boolean
           scoring?: Json
+          season_start?: string | null
+          swaps_enabled?: boolean
         }
         Update: {
           created_at?: string
           current_pick?: number
           draft_status?: string
           id?: string
+          invitations_enabled?: boolean
           invite_code?: string
           is_demo?: boolean
           lock_at?: string | null
@@ -258,7 +316,10 @@ export type Database = {
           owner_id?: string | null
           pick_deadline?: string | null
           pick_seconds?: number
+          pickups_enabled?: boolean
           scoring?: Json
+          season_start?: string | null
+          swaps_enabled?: boolean
         }
         Relationships: []
       }
@@ -325,17 +386,26 @@ export type Database = {
         Row: {
           avatar_url: string | null
           display_name: string
+          first_name: string
           id: string
+          last_name: string
+          preferred_team_name: string
         }
         Insert: {
           avatar_url?: string | null
           display_name?: string
+          first_name?: string
           id: string
+          last_name?: string
+          preferred_team_name?: string
         }
         Update: {
           avatar_url?: string | null
           display_name?: string
+          first_name?: string
           id?: string
+          last_name?: string
+          preferred_team_name?: string
         }
         Relationships: []
       }
@@ -521,9 +591,21 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      build_league_schedule: { Args: { lid: string }; Returns: undefined }
       can_read_league: { Args: { lid: string }; Returns: boolean }
       claim_player: {
         Args: { drop_slot?: number; pid: string; tid: string }
+        Returns: undefined
+      }
+      configure_league_controls: {
+        Args: {
+          capacity: number
+          invitations: boolean
+          lid: string
+          pickups: boolean
+          start_date?: string
+          swaps: boolean
+        }
         Returns: undefined
       }
       create_fantasy_league: {
