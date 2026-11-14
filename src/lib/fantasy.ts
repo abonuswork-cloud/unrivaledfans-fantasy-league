@@ -20,3 +20,12 @@ export function snakeTeam(pick: number, teams: number) { const round = Math.floo
 export const slotNames = ['Guard', 'Forward', 'Flex', 'Bench', 'Bench', 'Bench']
 export function initials(name: string) { return name.split(' ').map(word => word[0]).slice(0, 2).join('') }
 export function clubName(slug: string | null) { return (slug ?? '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') }
+export function projectionBreakdown<T extends Pick<Slot, 'slot'>>(slots: readonly T[], project: (slot: T) => number) {
+  const values = [1, 2, 3].map(position => {
+    const slot = slots.find(s => s.slot === position)
+    const value = slot ? project(slot) : 0
+    return Number.isFinite(value) ? Number(value.toFixed(1)) : 0
+  })
+  const maximum = Math.max(0, ...values)
+  return values.map(value => ({ value, percent: maximum > 0 ? Math.max(0, value) / maximum * 100 : 0 }))
+}
