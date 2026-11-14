@@ -19,4 +19,5 @@
 - [x] Add an unofficial fan-app footer disclaimer and hidden-address copy-email action on every page.
 - [x] Create a self-contained developer handoff and export guide with current example screenshots and downloadable documentation.
 - [x] Hide draft-room invite code when teams = max_teams; show again if capacity raised
-- [ ] Add owner-only co-commissioner promotion, enforce shared tools access, and give members profile details and a rulebook link.
+- [x] Add owner-only co-commissioner promotion, enforce shared tools access, and give members profile details and a rulebook link.
+- [ ] Verify promotion and delegated tools with a second signed-in league member — current other Test league teams have no accounts.
